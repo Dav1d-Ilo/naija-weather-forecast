@@ -269,78 +269,15 @@ The live dashboard uses **Open-Meteo's forecast service**, while the models were
 | `temp_model.joblib`        | Saved final maximum-temperature model and configuration                                            |
 | `typical_values.csv`       | Typical weather values used by the dashboard                                                       |
 | `requirements.txt`         | Python dependencies and package versions                                                           |
-| `weather_*.csv`            | Historical weather data for the four cities                                                        |
+| `weather_Abuja*.csv`       | Historical weather data for Abuja        
+| `weather_Lagos*.csv`       | Historical weather data for Lagos
+| `weather_Kano*.csv`        | Historical weather data for Kano
+|`weather_Port_Harcourt*.csv`| Historical weather data for Port_Harcourt
 
+## Try it
+**[naija-weather-forecast.streamlit.app](https://naija-weather-forecast.streamlit.app)**
 
----
-
-## 🛠️ Tech Stack
-
-* **Python**
-* **Pandas** — data manipulation
-* **NumPy** — numerical computing
-* **Scikit-learn** — modelling, validation and evaluation
-* **XGBoost** — gradient-boosted machine learning
-* **Matplotlib & Seaborn** — visualization
-* **Requests** — API requests
-* **Joblib** — saving trained models
-* **Streamlit** — interactive dashboard
-* **Open-Meteo** — weather data
-
----
-
-## 🚀 Running the Dashboard
-
-Clone the repository:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/naija_weather_forecast.git
-cd naija_weather_forecast
-```
-
-Install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the dashboard:
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
----
-
-## ⚠️ Limitations
-
-### Modelled weather data
-
-The historical data is **modelled/reanalysis weather data**, not simply direct measurements from weather stations.
-
-### One grid point per city
-
-Each city is represented by a **single geographic grid point**. Weather, especially rainfall, can vary considerably within a city. A storm may affect one part of Lagos while another part remains dry.
-
-### Four cities
-
-The project only covers **Lagos, Port Harcourt, Abuja and Kano**, so the results cannot automatically be generalized to every part of Nigeria.
-
-### Test period
-
-The test period is about **four and a half years**. Small differences between models can therefore be within the noise of the particular test period. A model that scores slightly higher is not necessarily meaningfully better.
-
-### Historical archive vs live forecast
-
-The models were trained using Open-Meteo's **historical archive**, while the live dashboard uses Open-Meteo's **forecast service**. They are similar but not identical, so the live inputs may differ slightly from the historical data used during training.
-
-### Weather forecasting is difficult
-
-This project uses a relatively small set of historical daily weather features and is not intended to compete with professional operational weather forecasting systems.
-
----
+If the page shows a "wake up" button, click it and wait a few seconds. Free apps go to sleep when nobody has used them for a while.
 
 ## 📌 Why I Built It
 
