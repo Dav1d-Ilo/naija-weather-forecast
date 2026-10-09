@@ -235,7 +235,8 @@ with tab_whatif:
     with right:
         st.markdown("**Prediction for tomorrow**")
         hero(f"{w_city} · {pd.Timestamp(2000, w_month, 1):%B}", prob, temp)
-        st.caption("Some combinations might not make much sense, like heavy rain today even though it hasn't rained all week"
+        st.caption("Some combinations might not make much sense, like heavy rain today even though it hasn't rained all week."
+                   
                    "The model wasn't trained on many situations like these, so predictions for unusual combinations may be less reliable.")
 
 # ----------------------------------------------------------------------------- ABOUT
