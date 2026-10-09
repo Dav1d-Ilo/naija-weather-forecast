@@ -187,7 +187,7 @@ with tab_whatif:
     st.subheader("What if the weather looked like this?")
     st.caption("Pick a city and month, choose a starting point, then adjust the sliders. Everything you "
                "don't set is filled in with the typical values for that city and month. This is for "
-               "exploring how the model reacts, not for real forecasting.")
+               "exploring how the model reacts.")
 
     a, b_ = st.columns(2)
     w_city = a.selectbox("City", list(CITIES), key="w_city")
@@ -235,8 +235,8 @@ with tab_whatif:
     with right:
         st.markdown("**Prediction for tomorrow**")
         hero(f"{w_city} · {pd.Timestamp(2000, w_month, 1):%B}", prob, temp)
-        st.caption("Some mixes are unusual (for example heavy rain today but no rainy days this week). "
-                   "The model only saw realistic weather, so be careful with odd combinations.")
+        st.caption("Some combinations might not make much sense, like heavy rain today even though it hasn't rained all week"
+                   "The model wasn't trained on many situations like these, so predictions for unusual combinations may be less reliable.")
 
 # ----------------------------------------------------------------------------- ABOUT
 with tab_about:
@@ -260,7 +260,6 @@ with tab_about:
         "and the city. Recent rain and recent temperatures matter most.\n"
         "- **Live data caveat:** live weather comes from Open-Meteo's forecast service, while the "
         "models were trained on its historical archive. The two are very similar but not identical.\n"
-        "- **Limits:** this is a learning project and not a substitute for official forecasts."
     )
 
 st.divider()
